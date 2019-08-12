@@ -32,9 +32,15 @@
         font-weight: bold;
         line-height: 30px;
       }
-      .bp3-input-group {
-        display: inline-block;
-        width: calc(100% - 100px);
+      .ant-col-10 {
+        .bp3-input-group {
+          display: inline-block;
+          width: calc(100% - 100px);
+        }
+        .ant-input {
+          display: inline-block;
+          width: calc(100% - 100px);
+        }
       }
       .right-button {
         float: right;

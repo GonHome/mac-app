@@ -70,6 +70,14 @@ export default class LeftMenu extends  React.Component<IProps> {
           <Item key="hot">热点信息查询</Item>
           <Item key="fictitious">虚拟身份查询</Item>
         </SubMenu>
+        <Item key="overAll">
+          <Icon type="desktop" />
+          <span>全局搜索</span>
+        </Item>
+        <Item key="mac">
+          <Icon type="desktop" />
+          <span>Mac信息</span>
+        </Item>
       </Menu>
     )
   }

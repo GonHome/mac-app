@@ -36,3 +36,21 @@ body {
     }
   }
 }
+.ant-table-small > .ant-table-content > .ant-table-body {
+  margin: 0;
+}
+
+.ant-table-body {
+  overflow-y: hidden;
+}
+
+.ant-table-small > .ant-table-content .ant-table-header::-webkit-scrollbar {
+  width: 0;
+}
+.ant-table-small > .ant-table-content .ant-table-header {
+  background-color: #eef1f5;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #eef1f5 !important;
+}

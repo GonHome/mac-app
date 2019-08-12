@@ -9,7 +9,7 @@ export default class Head extends  React.Component {
   render() {
     return (
       <div className="head">
-        <img src='logo.png' />
+        <img src='favicon.ico' />
         <div className="head-logo-text">
           <div className="title hover-link">
             <span>公</span>

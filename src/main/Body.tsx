@@ -2,7 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { System, App } from '../store';
 import InJect from '../util/InJect';
-import { menuDem } from '../constants/LinkMenu';
+import { menuDom } from '../constants/app';
 
 interface IProps {
   system: System,
@@ -17,7 +17,7 @@ export default class Body extends  React.Component<IProps> {
     const { checkedTag } = app;
     return (
       <div className="body" style={{ height: height - 100 }}>
-        {menuDem[checkedTag] ? <InJect Component={menuDem[checkedTag]}/> : null}
+        {menuDom[checkedTag] ? <InJect Component={menuDom[checkedTag]}/> : null}
       </div>
     )
   }

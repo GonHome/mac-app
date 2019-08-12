@@ -28,6 +28,11 @@ class System {
     }
     return 200;
   }
+
+  @computed
+  get rightWidth(): number {
+    return this.width - this.leftWidth;
+  }
 }
 
 export default System;

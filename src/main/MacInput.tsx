@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import * as _ from 'lodash';
-import { InputGroup } from '@blueprintjs/core';
+import { Input } from 'antd';
 
 interface IProps {
   value: string,
@@ -31,7 +31,7 @@ export default class MacInput extends  React.Component<IProps, stateTypes> {
   render() {
     const { value } = this.props;
     return (
-      <InputGroup value={value} onChange={this.macChange}/>
+      <Input value={value} onChange={this.macChange}/>
     )
   }
 }
