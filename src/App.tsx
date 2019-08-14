@@ -26,7 +26,6 @@ const history = syncHistoryWithStore(browserHistory, routerStore);
 class Entry extends React.Component<ISystem> {
   componentDidMount(): void {
     window.onresize = () => this.props.system.resize();
-    localStorage.clear();
   }
   render() {
     const { height, width } = this.props.system;

@@ -81,9 +81,6 @@ type stateTypes =  {
   value: string,
 }
 
-const domType = 'phone';
-const localKey = 'phone.leftTree';
-
 @inject('system', 'app')
 @observer
 export default class LeftTree extends  TreeModule {
@@ -91,27 +88,6 @@ export default class LeftTree extends  TreeModule {
   constructor(props: IProps) {
     super(props);
     this.state = { nodes: INITIAL_STATE, value: ''  };
-  }
-
-  componentDidMount(): void {
-    const localValue = localStorage.getItem(localKey);
-    if (localValue) {
-      const state: stateTypes = _.cloneDeep(JSON.parse(localValue));
-      const { value } = state;
-      this.setState({ value });
-    }
-  }
-
-  componentWillUnmount(): void {
-    const { app } = this.props;
-    const { value } = this.state;
-    const { tags } = app;
-    const isExist = tags.some((tag: IOpenTag) => tag.code === domType);
-    if (isExist) {
-      localStorage.setItem(localKey,  JSON.stringify({value}));
-    } else {
-      localStorage.setItem(localKey, '');
-    }
   }
 
   render() {
@@ -137,4 +113,5 @@ export default class LeftTree extends  TreeModule {
     )
   }
 }
+
 

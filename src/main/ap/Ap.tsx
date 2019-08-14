@@ -4,9 +4,8 @@ import { Row, Col, Card, Button } from 'antd';
 import { Icon, Tab, Tabs } from '@blueprintjs/core';
 import * as _ from 'lodash';
 import { App, System } from '../../store';
-import Phone from './Phone';
 import Hot from './Hot';
-import Person from './Person';
+import Phone from './Phone';
 import { IOpenTag } from '../../models';
 const { Meta } = Card;
 
@@ -21,10 +20,10 @@ interface IStates {
 
 @inject('system', 'app')
 @observer
-export default class Mac extends  React.Component<IProps, IStates> {
+export default class Ap extends  React.Component<IProps, IStates> {
   constructor(props: IProps){
     super(props);
-    this.state = { selectedTabId: 'phone' };
+    this.state = { selectedTabId: 'hot' };
   }
 
   tabChange = (selectedTabId: string) => {
@@ -39,13 +38,13 @@ export default class Mac extends  React.Component<IProps, IStates> {
       <div className="mac">
         <Row gutter={24}>
           <Col span={6}>
-            <span className="title">Mac资料</span>
+            <span className="title">AP资料</span>
             <Card
               hoverable
-              cover={<img alt="example" src="mac.png" />}
+              cover={<img alt="example" src="ap.png" />}
             >
               <Meta
-                title="终端Mac: 78-88-6D-09-77-2B"
+                title="热点Mac: 78-88-6D-09-77-2B"
                 description={
                   <div>
                     <div className="description">
@@ -62,21 +61,14 @@ export default class Mac extends  React.Component<IProps, IStates> {
             <span className="title">最新动态</span>
             <Tabs id="TabsExample" selectedTabId={selectedTabId} onChange={this.tabChange}>
               <Tab
-                id="phone"
-                title={<div><Icon icon="mobile-phone" />移动终端信息</div>}
-                panel={<Phone height={height - 230} />}
-              />
-              <Tab id="place" title={<div><Icon icon="map-marker" />活动地点规律</div>}  />
-              <Tab id="date" title={<div><Icon icon="timeline-events" />活动时间规律</div>}  />
-              <Tab
                 id="hot"
-                title={<div><Icon icon="feed" />历史热点列表</div>}
-                panel={<Hot height={height - 230} width={width} app={app}/>}
+                title={<div><Icon icon="feed" />热点AP信息</div>}
+                panel={<Hot height={height - 230} />}
               />
               <Tab
-                id="person"
-                title={<div><Icon icon="person" />关联身份</div>}
-                panel={<Person height={height - 230} />}
+                id="phone"
+                title={<div><Icon icon="mobile-phone" />终端连接信息</div>}
+                panel={<Phone height={height - 230} width={width} app={app}/>}
               />
             </Tabs>
           </Col>

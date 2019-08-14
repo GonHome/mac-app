@@ -5,7 +5,7 @@ interface IProps {
   height: number;
 }
 @observer
-export default class Phone extends  React.Component<IProps> {
+export default class Hot extends  React.Component<IProps> {
 
   componentDidMount(): void {
     console.log(process.env);
@@ -14,12 +14,12 @@ export default class Phone extends  React.Component<IProps> {
   render() {
     const { height } = this.props;
     return (
-      <div className="content phone" style={{ height }}>
+      <div className="content hot" style={{ height }}>
         <ul>
           <li>
             <Row gutter={24}>
               <Col span={6}>
-                终端Mac:
+                热点Mac:
               </Col>
               <Col span={18}>
                 78-88-6D-09-77-2B
@@ -29,7 +29,7 @@ export default class Phone extends  React.Component<IProps> {
           <li>
             <Row gutter={24}>
               <Col span={6}>
-                终端品牌:
+                热点名称:
               </Col>
               <Col span={18}>
               </Col>

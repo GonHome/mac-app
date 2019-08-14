@@ -12,34 +12,20 @@ export default class Head extends  React.Component {
         <img src='favicon.ico' />
         <div className="head-logo-text">
           <div className="title hover-link">
-            <span>公</span>
-            <span>共</span>
-            <span>场</span>
-            <span>所</span>
-            <span>无</span>
-            <span>线</span>
-            <span>上</span>
-            <span>网</span>
-            <span>安</span>
-            <span>全</span>
-            <span>管</span>
-            <span>控</span>
+            <span>M</span>
+            <span>A</span>
+            <span>C</span>
+            <span>融</span>
+            <span>合</span>
             <span>系</span>
             <span>统</span>
           </div>
           <div className="title hover-link">
-            <span>公</span>
-            <span>共</span>
-            <span>场</span>
-            <span>所</span>
-            <span>无</span>
-            <span>线</span>
-            <span>上</span>
-            <span>网</span>
-            <span>安</span>
-            <span>全</span>
-            <span>管</span>
-            <span>控</span>
+            <span>M</span>
+            <span>A</span>
+            <span>C</span>
+            <span>融</span>
+            <span>合</span>
             <span>系</span>
             <span>统</span>
           </div>

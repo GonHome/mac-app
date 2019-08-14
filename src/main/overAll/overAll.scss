@@ -39,4 +39,44 @@
       }
     }
   }
+  .content {
+    .ant-col {
+      margin-top: 10px;
+      .ant-card-body {
+        padding: 12px;
+        .ant-card-meta-detail > div:not(:last-child) {
+          margin-bottom: 0;
+        }
+        .ant-card-meta-description {
+          font-size: 12px;
+          .bp3-popover-wrapper {
+            height: 0;
+            width: 0;
+          }
+          ul {
+            list-style: none;
+            padding: 0;
+            li {
+              overflow: hidden;
+              height: 21px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              display: inline-block;
+              width: 100%;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .ant-card-body:hover {
+        .ant-card-meta-title {
+          color: #1c84c6;
+        }
+      }
+    }
+    .page {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
 }

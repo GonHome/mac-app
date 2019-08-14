@@ -72,7 +72,7 @@
 }
 
 $i: 0;
-@while $i < 15 {
+@while $i < 7 {
   .head .head-logo-text .title span:nth-of-type(#{$i + 1}) {
     -webkit-transition: all (.2s + .025s * $i);
     transition: all (.2s + .025s * $i);

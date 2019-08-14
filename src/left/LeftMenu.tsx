@@ -78,6 +78,10 @@ export default class LeftMenu extends  React.Component<IProps> {
           <Icon type="desktop" />
           <span>Mac信息</span>
         </Item>
+        <Item key="ap">
+          <Icon type="desktop" />
+          <span>AP信息</span>
+        </Item>
       </Menu>
     )
   }

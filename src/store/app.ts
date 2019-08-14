@@ -19,7 +19,7 @@ class App {
         this.tags.push(tag);
       }
     }
-    this.checkedTag = tag.code;
+    this.checkTag(tag.code);
   };
 
   @action checkTag = (checkedTag: string) => {
@@ -37,11 +37,11 @@ class App {
     const isExist = this.tags.some((tag: IOpenTag) => tag.code === this.checkedTag);
     if (!isExist) {
       if (this.tags[index]) {
-        this.checkedTag = this.tags[index].code;
+        this.checkTag(this.tags[index].code);
       } else if (this.tags[index - 1]) {
-        this.checkedTag = this.tags[index - 1].code;
+        this.checkTag(this.tags[index - 1].code);
       } else {
-        this.checkedTag = 'home';
+        this.checkTag('home');
       }
     }
   };
@@ -50,7 +50,7 @@ class App {
     this.tags = this.tags.filter((tag: IOpenTag) => {
       return tag.code === tagCode;
     });
-    this.checkedTag = tagCode;
+    this.checkTag(tagCode);
   }
 
   @action closeRightTags = (tagCode: string) => {
@@ -59,7 +59,7 @@ class App {
     this.tags  = this.tags.filter((tag: IOpenTag, ind: number) => ind <= index);
     const isExist = this.tags.some((tag: IOpenTag) => tag.code === this.checkedTag);
     if (!isExist) {
-      this.checkedTag = tagCode;
+      this.checkTag(tagCode);
     }
   }
 

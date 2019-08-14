@@ -20,8 +20,6 @@ type stateTypes = {
   value: string;
 }
 
-const domType = 'phone';
-const localKey = 'phone.main';
 
 @inject('system', 'app')
 @observer
@@ -30,25 +28,6 @@ export default class Main extends  React.Component<IProps, stateTypes> {
   constructor(props: IProps) {
     super(props);
     this.state = { showBar: false, value: '__-__-__-__-__'  };
-  }
-
-  componentDidMount(): void {
-    const localValue = localStorage.getItem(localKey);
-    if (localValue) {
-      const state: stateTypes = _.cloneDeep(JSON.parse(localValue));
-      this.setState(state);
-    }
-  }
-
-  componentWillUnmount(): void {
-    const { app } = this.props;
-    const { tags } = app;
-    const isExist = tags.some((tag: IOpenTag) => tag.code === domType);
-    if (isExist) {
-      localStorage.setItem(localKey,  JSON.stringify(this.state));
-    } else {
-      localStorage.setItem(localKey, '');
-    }
   }
 
   macChange = (value: string) => {

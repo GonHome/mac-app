@@ -2,11 +2,13 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col, Input } from 'antd';
 import { Button, Intent, Checkbox } from '@blueprintjs/core';
+import * as _ from 'lodash';
 import { App, System } from '../../store';
 import MacInput from '../MacInput';
-import * as _ from "lodash";
 import { IOpenTag } from '../../models';
 import { searchTypes } from '../../constants/app';
+import Phone from './Phone';
+import Hot from './Hot';
 
 interface IProps {
   system: System,
@@ -19,8 +21,6 @@ interface IState {
   value: string,
   isVague: boolean,
 }
-const domType = 'overAll';
-const localKey = 'overAll.main';
 
 @inject('system', 'app')
 @observer
@@ -31,24 +31,19 @@ export default class OverAll extends  React.Component<IProps, IState> {
     this.state = { searchType: 'phone', value: '__-__-__-__-__', isVague: false  };
   }
 
-  componentDidMount(): void {
-    const localValue = localStorage.getItem(localKey);
-    if (localValue) {
-      const state: IState = _.cloneDeep(JSON.parse(localValue));
-      this.setState(state);
-    }
-  }
-
-  componentWillUnmount(): void {
+  selectMac = (mac: string) => {
     const { app } = this.props;
-    const { tags } = app;
-    const isExist = tags.some((tag: IOpenTag) => tag.code === domType);
-    if (isExist) {
-      localStorage.setItem(localKey,  JSON.stringify(this.state));
-    } else {
-      localStorage.setItem(localKey, '');
-    }
-  }
+    const { addTag } = app;
+    let param: IOpenTag = { code: `mac#${mac}`, text: 'Mac信息' };
+    addTag(param);
+  };
+
+  selectAp = (ap: string) => {
+    const { app } = this.props;
+    const { addTag } = app;
+    let param: IOpenTag = { code: `ap#${ap}`, text: 'AP信息' };
+    addTag(param);
+  };
 
   inputChange = (value: string) => this.setState({ value });
 
@@ -96,6 +91,7 @@ export default class OverAll extends  React.Component<IProps, IState> {
             </Col>
           </Row>
         </div>
+        <Hot selectAp={this.selectAp}/>
       </div>
     )
   }

@@ -6,6 +6,7 @@ import { Input } from 'antd';
 interface IProps {
   value: string,
   onChange: (value: string) => void,
+  size?: "small" | "default" | "large";
 }
 
 type stateTypes = {
@@ -29,9 +30,9 @@ export default class MacInput extends  React.Component<IProps, stateTypes> {
   };
 
   render() {
-    const { value } = this.props;
+    const { value, size } = this.props;
     return (
-      <Input value={value} onChange={this.macChange}/>
+      <Input value={value} onChange={this.macChange} size={size ? size : 'default'}/>
     )
   }
 }

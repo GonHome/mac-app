@@ -42,8 +42,16 @@
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid #ebeced;
+    .bar-action {
+      line-height: 30px;
+      padding: 5px 10px;
+      .bar-title{
+        font-weight: bold;
+        text-align: right;
+      }
+    }
   }
-  .phone {
+  .hot {
     ul {
       list-style: none;
       padding: 0;
