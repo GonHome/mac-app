@@ -14,28 +14,46 @@ import { rootStore } from './store';
 import './index.scss';
 import LeftMenu from './left';
 import Main  from './main';
+import Login from './login';
 import InJect from './util/InJect';
-import { ISystem } from './store';
+import { System, User } from './store';
 const browserHistory = createBrowserHistory();
 const routerStore =  new RouterStore();
 // 同步路由与mobx的数据状态
 const history = syncHistoryWithStore(browserHistory, routerStore);
 
-@inject("system")
+interface IProps {
+  system: System,
+  user: User,
+}
+
+@inject("system", "user")
 @observer
-class Entry extends React.Component<ISystem> {
+class Entry extends React.Component<IProps> {
+
   componentDidMount(): void {
+    this.props.user.checkLogin();
     window.onresize = () => this.props.system.resize();
   }
+
   render() {
     const { height, width } = this.props.system;
-    return (
-      <div style={{ height, width }}>
-        <Head />
-        <InJect Component={LeftMenu}/>
-        <InJect Component={Main} />
-      </div>
-    )
+    const { isLogin } = this.props.user;
+    if (isLogin) {
+      return (
+        <div style={{ height, width }}>
+          <Head />
+          <InJect Component={LeftMenu}/>
+          <InJect Component={Main} />
+        </div>
+      );
+    } else {
+      return (
+        <div style={{ height, width }}>
+          <InJect Component={Login} />
+        </div>
+      );
+    }
   }
 }
 

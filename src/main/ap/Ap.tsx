@@ -2,11 +2,9 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col, Card, Button } from 'antd';
 import { Icon, Tab, Tabs } from '@blueprintjs/core';
-import * as _ from 'lodash';
 import { App, System } from '../../store';
 import Hot from './Hot';
 import Phone from './Phone';
-import { IOpenTag } from '../../models';
 const { Meta } = Card;
 
 interface IProps {
@@ -41,7 +39,7 @@ export default class Ap extends  React.Component<IProps, IStates> {
             <span className="title">AP资料</span>
             <Card
               hoverable
-              cover={<img alt="example" src="ap.png" />}
+              cover={<img alt="ap" src="ap.png" />}
             >
               <Meta
                 title="热点Mac: 78-88-6D-09-77-2B"

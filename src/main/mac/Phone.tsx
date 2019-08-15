@@ -7,10 +7,6 @@ interface IProps {
 @observer
 export default class Phone extends  React.Component<IProps> {
 
-  componentDidMount(): void {
-    console.log(process.env);
-  }
-
   render() {
     const { height } = this.props;
     return (

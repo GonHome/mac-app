@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx';
 import { IOpenTag } from '../models';
+
 // app状态
 class App {
   @observable tags: IOpenTag[];

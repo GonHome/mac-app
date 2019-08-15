@@ -1,11 +1,9 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import * as _ from 'lodash';
 import { DatePicker } from 'antd';
 import { App, System } from '../../../store';
 import { Row, Col, Table } from 'antd';
 import { Intent, ButtonGroup, Button, Icon, Popover, Position } from '@blueprintjs/core';
-import { IOpenTag } from '../../../models';
 import MacInput from '../../MacInput';
 import ColsFilter from '../ColsFilter';
 const { RangePicker } = DatePicker;

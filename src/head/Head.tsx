@@ -11,24 +11,7 @@ export default class Head extends  React.Component {
       <div className="head">
         <img src='favicon.ico' />
         <div className="head-logo-text">
-          <div className="title hover-link">
-            <span>M</span>
-            <span>A</span>
-            <span>C</span>
-            <span>融</span>
-            <span>合</span>
-            <span>系</span>
-            <span>统</span>
-          </div>
-          <div className="title hover-link">
-            <span>M</span>
-            <span>A</span>
-            <span>C</span>
-            <span>融</span>
-            <span>合</span>
-            <span>系</span>
-            <span>统</span>
-          </div>
+          <img src='login_title_blue.png' />
         </div>
         <div className="head-toolbar">
           <ButtonGroup>

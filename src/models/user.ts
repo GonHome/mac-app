@@ -1,5 +1,6 @@
+import { observable } from "mobx";
+
 export interface IUser {
-  name: string;
-  username: string;
-  id: string;
+  isLogin: boolean;
+  userInfo?: { name: string, username: string, id: number };
 }

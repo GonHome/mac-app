@@ -2,12 +2,12 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col, Card, Button } from 'antd';
 import { Icon, Tab, Tabs } from '@blueprintjs/core';
-import * as _ from 'lodash';
 import { App, System } from '../../store';
 import Phone from './Phone';
 import Hot from './Hot';
 import Person from './Person';
-import { IOpenTag } from '../../models';
+import PlaceGraph from './PlaceGraph';
+import TimerGraph from './TimerGraph';
 const { Meta } = Card;
 
 interface IProps {
@@ -66,8 +66,16 @@ export default class Mac extends  React.Component<IProps, IStates> {
                 title={<div><Icon icon="mobile-phone" />移动终端信息</div>}
                 panel={<Phone height={height - 230} />}
               />
-              <Tab id="place" title={<div><Icon icon="map-marker" />活动地点规律</div>}  />
-              <Tab id="date" title={<div><Icon icon="timeline-events" />活动时间规律</div>}  />
+              <Tab
+                id="place"
+                title={<div><Icon icon="map-marker" />活动地点规律</div>}
+                panel={<PlaceGraph height={height - 230} />}
+              />
+              <Tab
+                id="timer"
+                title={<div><Icon icon="timeline-events" />活动时间规律</div>}
+                panel={<TimerGraph height={height - 230} />}
+              />
               <Tab
                 id="hot"
                 title={<div><Icon icon="feed" />历史热点列表</div>}

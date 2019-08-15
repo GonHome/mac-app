@@ -3,26 +3,26 @@ import { IUser } from '../models';
 
 // 登录注册状态
 class User {
-  @observable name: string;
-  @observable username: string;
-  @observable id: string;
+  @observable isLogin: boolean;
+  @observable userInfo?: { name: string, username: string, id: number };
 
   constructor () {
-    this.name = '系统管理员';
-    this.username = 'zladmin';
-    this.id = '';
+    this.isLogin = true;
+    this.userInfo = { name: '系统管理员', username: 'zladmin', id: 1 };
   }
 
-  @action setUser ({ name, username, id }: IUser) {
-    this.name = name;
-    this.username = username;
-    this.id = id;
+  @action checkLogin() {
+
+  }
+
+  @action setUser ({ isLogin, userInfo }: IUser) {
+    this.isLogin = isLogin;
+    this.userInfo = userInfo;
   }
 
   @action signOut () {
-    this.name = '';
-    this.username = '';
-    this.id = '';
+    this.isLogin = false;
+    this.userInfo = undefined;
   }
 }
 

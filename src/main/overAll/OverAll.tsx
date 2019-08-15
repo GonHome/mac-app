@@ -2,12 +2,10 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col, Input } from 'antd';
 import { Button, Intent, Checkbox } from '@blueprintjs/core';
-import * as _ from 'lodash';
 import { App, System } from '../../store';
 import MacInput from '../MacInput';
 import { IOpenTag } from '../../models';
 import { searchTypes } from '../../constants/app';
-import Phone from './Phone';
 import Hot from './Hot';
 
 interface IProps {

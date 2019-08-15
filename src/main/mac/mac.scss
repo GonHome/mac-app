@@ -42,6 +42,10 @@
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid #ebeced;
+    .float{
+      width: 100%;
+      height: 100%;
+    }
   }
   .phone {
     ul {

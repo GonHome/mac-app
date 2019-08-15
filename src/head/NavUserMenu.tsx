@@ -10,13 +10,16 @@ export default class NavUserMenu extends  React.Component<IUser> {
 
   render() {
     const { user } = this.props;
-    const { name } = user;
-    return (
-      <Menu>
-        <MenuItem text={name} icon="person"/>
-        <MenuItem text="修改密码" icon="edit"/>
-      </Menu>
-    )
+    const { userInfo } = user;
+    if (userInfo) {
+      return (
+        <Menu>
+          <MenuItem text={userInfo.name} icon="person"/>
+          <MenuItem text="修改密码" icon="edit"/>
+        </Menu>
+      )
+    }
+    return null;
   }
 }
 

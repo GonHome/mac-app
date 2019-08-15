@@ -1,9 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import * as _ from 'lodash';
 import { System, App } from '../../../store';
 import { Tree, Classes, ITreeNode, Tooltip, Position, Icon, Intent, Button, InputGroup } from '@blueprintjs/core';
-import { IOpenTag } from '../../../models';
 import TreeModule from '../TreeModule';
 
 const INITIAL_STATE: ITreeNode[] = [
