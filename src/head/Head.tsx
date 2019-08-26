@@ -9,9 +9,9 @@ export default class Head extends  React.Component {
   render() {
     return (
       <div className="head">
-        <img src='favicon.ico' />
+        <img src='favicon.ico' alt='favicon' />
         <div className="head-logo-text">
-          <img src='login_title_blue.png' />
+          <img src='login_title_blue.png' alt='login_tilte'/>
         </div>
         <div className="head-toolbar">
           <ButtonGroup>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Row, Col, Input } from 'antd';
+import { Row, Col, Input, Spin } from 'antd';
 import { Button, Intent, Checkbox } from '@blueprintjs/core';
 import { App, System } from '../../store';
 import MacInput from '../MacInput';
@@ -53,6 +53,8 @@ export default class OverAll extends  React.Component<IProps, IState> {
     }
   };
 
+  antIcon = <div className="loader" />;
+
   render() {
     const { isVague, value, searchType } = this.state;
     return (
@@ -89,7 +91,9 @@ export default class OverAll extends  React.Component<IProps, IState> {
             </Col>
           </Row>
         </div>
-        <Hot selectAp={this.selectAp}/>
+        <Spin spinning={true} indicator={this.antIcon}>
+          <Hot selectAp={this.selectAp}/>
+        </Spin>
       </div>
     )
   }
